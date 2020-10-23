@@ -10,14 +10,6 @@ phases:
       - apt-get install wget build-essential checkinstall
       - apt-get update && apt-get -y install jq python3-pip python3-dev && pip3 install --upgrade awscli
       - apt-get upgrade
-      - apt-get install libreadline-gplv2-dev libncursesw5-dev libssl-dev libsqlite3-dev tk-dev libgdbm-dev libc6-dev libbz2-dev libffi-dev zlib1g-dev
-      - cd /usr/src
-      - wget https://www.python.org/ftp/python/3.7.9/Python-3.7.9.tgz
-      - tar xzf Python-3.7.9.tgz
-      - cd Python-3.7.9
-      - ./configure --enable-optimizations
-      - make altinstall
-      - python3.7 -V
   pre_build:
       commands:
         - TAG="$REPOSITORY_NAME.$REPOSITORY_BRANCH.$ENVIRONMENT_NAME.$(date +%Y-%m-%d.%H.%M.%S).$(echo $CODEBUILD_RESOLVED_SOURCE_VERSION | head -c 8)"
