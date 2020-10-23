@@ -106,11 +106,11 @@ Resources:
 
   EcrDockerRepository:
     Type: AWS::ECR::Repository
-    DeletionPolicy: Retain
+    DeletionPolicy: Delete
 
   CodePipelineArtifactBucket:
     Type: AWS::S3::Bucket
-    DeletionPolicy: Retain
+    DeletionPolicy: Delete
 
   CustomResourceLambda:
     Type: AWS::Lambda::Function
